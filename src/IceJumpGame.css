@@ -1,0 +1,76 @@
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100vh); /* Başlangıç pozisyonu (üstte) */
+    opacity: 1; /* Görünürlük */
+  }
+  100% {
+    transform: translateY(100vh); /* Aşağıya doğru hareket */
+    opacity: 0; /* Fade out effect */
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateY(-100vh) rotate(0deg); /* Başlangıç pozisyonu (üstte) ve döndürme */
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg); /* Aşağıya doğru hareket ve döndürme */
+    opacity: 0; /* Fade out effect */
+  }
+}
+
+.snowfall {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Mouse olaylarını engelle */
+  overflow: hidden; /* Taşmayı gizle */
+}
+
+.snowflake {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8); /* Beyaz renk ve biraz şeffaflık */
+  border-radius: 50%; /* Daire şekli */
+  animation: snowfall linear infinite, rotate linear infinite; /* Snowfall ve rotate animasyonu */
+}
+
+/* Kar tanelerini rastgele pozisyon ve boyutlarla oluştur */
+.snowflake:nth-child(1) {
+  width: 10px;
+  height: 10px;
+  left: 20%;
+  animation-duration: 7s; /* Düşüş süresi */
+}
+
+.snowflake:nth-child(2) {
+  width: 12px;
+  height: 12px;
+  left: 50%;
+  animation-duration: 8s;
+}
+
+.snowflake:nth-child(3) {
+  width: 15px;
+  height: 15px;
+  left: 70%;
+  animation-duration: 6s;
+}
+
+.snowflake:nth-child(4) {
+  width: 8px;
+  height: 8px;
+  left: 80%;
+  animation-duration: 9s;
+}
+
+.snowflake:nth-child(5) {
+  width: 14px;
+  height: 14px;
+  left: 30%;
+  animation-duration: 11s;
+}
+
+/* Daha fazla kar tanesi eklenebilir */
